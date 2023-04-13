@@ -9,17 +9,13 @@ VALUE = {'Ace': 11, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9':
 
 <<<<<<< HEAD
 def creat_deck():
-    pass
-=======
-def create_deck():
-    deck =[]
+    deck = []
     for suit in SUITS:
         for rank in RANKS:
             value = VALUE[rank]
-            deck.append([suit,rank,value])
+            deck.append([suit, rank, value])
     return deck
 
->>>>>>> 151697a (Initial commit)
 
 def shuffle_deck():
     random.shuffle()
