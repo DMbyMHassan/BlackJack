@@ -5,7 +5,7 @@ def get_hand_value(hand):
         card_value = card.get_card_value(card)
         if card_value == 11:
             aces += 1
-        value +=card_value
+        value += card_value
     while aces > 0 and value > 21:
         value -= 10
         aces -= 1
