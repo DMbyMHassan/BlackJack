@@ -50,7 +50,6 @@ def print_cards_dealer(cards, hidden_card=False):
     print()
     if hidden_card:
         print("DEALER' SHOW CARD:")
-        print("HIDDEN CARD")
         print(f"{cards[1][1]} of {cards[1][0]}")
     else:
         print("DEALER'S CARDS:")
@@ -96,6 +95,7 @@ def main():
 
         # check if the player have black jack
         if player_points == 21:
+            print (f"Your points {player_points} Dealer Points {dealer_points}")
             print("BLACKJACK")
             money += bet_amount.quantize(Decimal('0.01')) * BLACKJACK_PAY
         else:
@@ -106,9 +106,11 @@ def main():
                     print_cards_palyer(player_hand)
                     player_points = get_hand_points(player_hand)
 
+
                     # check if the player busted
                     if player_points > 21:
-                        print("looser!")
+                        print (f"Your points {player_points} Dealer Points {dealer_points}")
+                        print("Sorry you lose!")
                         money -= bet_amount
                         break
                 elif respons.lower() == 'stand':
@@ -119,12 +121,15 @@ def main():
                         print_cards_dealer(dealer_hand)
                     # check if delear busted
                     if dealer_points > 21:
+                        print(f"Your points: {player_points} Dealer Points :{dealer_points}")
                         print("DEALER BUSTS!")
                         money += bet_amount
                     elif dealer_points > player_points:
+                        print(f"Your points: {player_points} Dealer Points :{dealer_points}")
                         print("DEALER WINS!")
                         money -= bet_amount
                     elif dealer_points < player_points:
+                        print(f"Your points: {player_points} Dealer Points :{dealer_points}")
                         print("BLACKJACK!")
                         print("YOU WIN!")
                         money += bet_amount
@@ -150,8 +155,9 @@ def main():
             player_points = get_hand_points(player_hand)
             dealer_points = get_hand_points(dealer_hand)
             if player_points == 21:
+                print(f"Your points: {player_points} Dealer Points :{dealer_points}")
                 print("BLACKJACK")
-                money += bet_amount.quantize(Decimal('0.01')) * BLACKJACK_PAY
+                money += bet_amount.quantize(Decimal('0.1')) * BLACKJACK_PAY
             else:
                 while True:
                     respons = input("Hit or stand? (hit/stand): ")
@@ -160,6 +166,7 @@ def main():
                         print_cards_palyer(player_hand)
                         player_points = get_hand_points(player_hand)
                         if player_points > 21:
+                            print(f"Your points: {player_points} Dealer Points :{dealer_points}")
                             print("looser!")
                             money -= bet_amount
                             break
@@ -170,12 +177,15 @@ def main():
                             dealer_points = get_hand_points(dealer_hand)
                             print_cards_dealer(dealer_hand)
                         if dealer_points > 21:
+                            print(f"Your points: {player_points} Dealer Points :{dealer_points}")
                             print("DEALER BUSTS!")
                             money += bet_amount
                         elif dealer_points > player_points:
+                            print(f"Your points: {player_points} Dealer Points :{dealer_points}")
                             print("DEALER WINS!")
                             money -= bet_amount
                         elif dealer_points < player_points:
+                            print(f"Your points: {player_points} Dealer Points :{dealer_points}")
                             print("BLACKJACK!")
                             print("YOU WIN!")
                             money += bet_amount
