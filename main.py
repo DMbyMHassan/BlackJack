@@ -95,7 +95,7 @@ def main():
 
         # check if the player have black jack
         if player_points == 21:
-            print (f"Your points {player_points} Dealer Points {dealer_points}")
+            print(f"Your points: {player_points} Dealer Points :{dealer_points}")
             print("BLACKJACK")
             money += bet_amount.quantize(Decimal('0.01')) * BLACKJACK_PAY
         else:
@@ -109,7 +109,7 @@ def main():
 
                     # check if the player busted
                     if player_points > 21:
-                        print (f"Your points {player_points} Dealer Points {dealer_points}")
+                        print(f"Your points: {player_points} Dealer Points :{dealer_points}")
                         print("Sorry you lose!")
                         money -= bet_amount
                         break
