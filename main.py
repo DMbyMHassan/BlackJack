@@ -24,9 +24,11 @@ def get_bet_amount(money):
         except ValueError:
             print("Invalid input. Please enter a number.")
 
+
 # This function returns the point value of a card
 def get_card_value(card):
     return card[2]
+
 
 # This function to calculate hand points
 def get_hand_points(hand):
@@ -36,6 +38,7 @@ def get_hand_points(hand):
         points -= 10
         sum_aces -= 1
     return points
+
 
 # printing the Dealer cards
 def print_cards_dealer(cards, hidden_card=False):
@@ -48,6 +51,7 @@ def print_cards_dealer(cards, hidden_card=False):
         print("DEALER'S CARDS:")
         for card in cards:
             print(f"{card[1]} of{card[0]}")
+
 
 # printing the player cards
 def print_cards_palyer(cards):
