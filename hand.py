@@ -1,3 +1,5 @@
+# This module to  calculates value of the hand , and including A"ces" that can be valued as 1 or 11
+
 def get_hand_value(hand):
     value = 0
     aces = 0
@@ -10,6 +12,9 @@ def get_hand_value(hand):
         value -= 10
         aces -= 1
     return value
+
+
+# Displays the given hand
 
 def display_hand(hand):
     for card in hand:

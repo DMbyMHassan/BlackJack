@@ -4,11 +4,13 @@ from decimal import Decimal
 import db
 import card
 
+# definig the min and max bit as global vriable and Blackjack pay
 MIN_BET = 5
 MAXIMUM_BIT = 100
 BLACKJACK_PAY = Decimal('1.5')
 
 
+# get bet amount and vlaidate to be between minmum and maximum range
 def get_bet_amount(money):
     while True:
         try:
@@ -22,11 +24,11 @@ def get_bet_amount(money):
         except ValueError:
             print("Invalid input. Please enter a number.")
 
-
+# This function returns the point value of a card
 def get_card_value(card):
     return card[2]
 
-
+# This function to calculate hand points
 def get_hand_points(hand):
     points = sum(get_card_value(card) for card in hand)
     sum_aces = sum(1 for card in hand if card[1] == 'Ace')
@@ -35,7 +37,7 @@ def get_hand_points(hand):
         sum_aces -= 1
     return points
 
-
+# printing the Dealer cards
 def print_cards_dealer(cards, hidden_card=False):
     print()
     if hidden_card:
@@ -47,7 +49,7 @@ def print_cards_dealer(cards, hidden_card=False):
         for card in cards:
             print(f"{card[1]} of{card[0]}")
 
-
+# printing the player cards
 def print_cards_palyer(cards):
     print("\nYOUR CARDS:")
     for card in cards:
